@@ -6,7 +6,9 @@ This software is a fork of:
 * [Miyosuda's UNREAL implementation](https://github.com/miyosuda/unreal)
 
 This project has been tested on Debian 9. The setup.sh script installs the necessary dependencies and compiles [Rogue](http://www.anthive.com/project/rogue/). Before running setup.sh you must have installed virtualenv, python3-dev, python3-pip and make. 
-The train.sh script starts the training. The test.sh script starts testing.
+
+The train.sh script starts the training.
+
 During training the agent produces real-time statistics on the its perfomance. Among the statistics reported there are: 
 * the success rate: the percentage of episodes in which the final state is reached (an equivalent of the accuracy)
 * the number of new tiles found during the exploration process
