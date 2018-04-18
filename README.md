@@ -14,7 +14,9 @@ During training the agent produces real-time statistics on the its perfomance. A
 * the number of new tiles found during the exploration process
 * the number of steps taken to win an episode
 
-For each thread, the statistics are printed as the average of the last 200 simulations. The results.log file contains the average of the average of each thread.
+In the folder "checkpoint" there are the tensorflow checkpoints of a 40kk steps training (with a success rate around 97.5%)
+
+For each thread, the statistics are printed as the average of the last 200 episodes. The results.log file contains the average of the average of each thread.
 Through the options.py file you can change most of the architecture parameters, including: the number of threads to use, whether to use the GPU or not, the initial learning rate, the log directories and much more.
 The framework is composed of the following classes:
 * Application (train.py): the global A3C agent, which contains the methods for starting the local workers.
