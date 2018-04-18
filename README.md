@@ -21,7 +21,7 @@ The framework is composed of the following classes:
 * MultiAgentModel and A3CModel (multi_agent_model.py and a3c_model.py): within these classes the structure of the neural network is specified (LSTM, policy layer, value layer, CNN, FC, ecc..).
 * Environment (environment.py): class that handles the interface between the agent and the environment. The Environment class has been extended with RogueEnvironment (rogue_environment.py). RogueEnvironment contains methods for calculating rewards, obtaining statuses and statistics on episodes, etc.
 
-Training Video
+Training Video (click to play)
 -------
 
 [![Youtube video of the training](https://img.youtube.com/vi/1j6_165Q46w/0.jpg)](https://www.youtube.com/watch?v=1j6_165Q46w)
@@ -33,4 +33,5 @@ License
 This software is a fork of:
 * [RogueInABox](https://github.com/rogueinabox/rogueinabox)
 * [Miyosuda's UNREAL implementation](https://github.com/miyosuda/unreal)
+
 Those parts of this software that are not inherited from the aforementioned repositories are released under the GPL v3.0 licence.
