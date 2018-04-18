@@ -1,26 +1,29 @@
-Rogueinabox: a Rogue environment for AI learning
+A3C for Rogueinabox
 ==========
   
-![rogue gif](https://raw.githubusercontent.com/rogueinabox/rogueinabox/master/rogueinabox/assets/img/good_rogue.gif)  
+This software is a fork of:
+	- https://github.com/rogueinabox/rogueinabox
+	- https://github.com/miyosuda/unreal 
+This project has been tested on Debian 9. The setup.sh script installs the necessary dependencies and compiles Rogue (http://www.anthive.com/project/rogue/). Before running setup.sh you must have installed virtualenv, python3-dev, python3-pip and make. 
+The train.sh script starts the training. The test.sh script starts testing.
+During training the agent produces real-time statistics on the its perfomance. Among the statistics reported there are: 
+- the success rate: the percentage of episodes in which the final state is reached (an equivalent of the accuracy)
+- the number of new tiles found during the exploration process
+- the number of steps taken to win an episode
+For each thread, the statistics are printed as the average of the last 200 simulations. The results.log file contains the average of the average of each thread.
+Through the options.py file you can change most of the architecture parameters, including: the number of threads to use, whether to use the GPU or not, the initial learning rate, the log directories and much more.
+The framework is composed of the following classes:
+- Application (train.py): the global A3C agent, which contains the methods for starting the local workers.
+- Trainer (trainer.py): a local A3C worker.
+- RMSPropApplier (rmsprop_applier.py): the class for asynchronously computing the gradient.
+- MultiAgentModel and A3CModel (multi_agent_model.py and a3c_model.py): within these classes the structure of the neural network is specified (LSTM, policy layer, value layer, CNN, FC, ecc..).
+- Environment (environment.py): class that handles the interface between the agent and the environment. The Environment class has been extended with RogueEnvironment (rogue_environment.py). RogueEnvironment contains methods for calculating rewards, obtaining statuses and statistics on episodes, etc.
 
-  Rogueinabox is a higly modular learning environment built around the videogame Rogue, the father of the roguelike genre.
-  It offers easy ways to interact with the game and a whole framework to build, customize and run learning agents.
-  It comes with a library of pre-built modules that was developed during our research and experimentation with different agents designs.
-  
-  See the [Wiki](https://github.com/rogueinabox/rogueinabox/wiki) for full documentation, examples, and other information.
-
-Members
--------
-* [Andrea Asperti](https://github.com/asperti), Professor at University of Bologna
-* [Carlo De Pieri](https://github.com/CarloDePieri), Student at University of Bologna
-* [Gianmaria Pedrini](https://github.com/ElGullo), Student at University of Bologna
 
 License
 -------
 
-This software is released under the GPL v3.0 licence.
-
-Contributions
--------
-
-Any contribution is welcome! :D
+This software is a fork of:
+	- https://github.com/rogueinabox/rogueinabox
+	- https://github.com/miyosuda/unreal 
+Those parts of this software that are not inherited from the aforementioned repositories are released under the GPL v3.0 licence.
