@@ -25,7 +25,7 @@ def build(option_type):
 
 	tf.app.flags.DEFINE_integer("parallel_size", 16, "parallel thread size")
 	tf.app.flags.DEFINE_integer("steps_per_episode", 500, "number of maximum actions execution per episode")
-	tf.app.flags.DEFINE_integer("match_count_for_evaluation", 200, "number of matches used for evaluation scores")
+	tf.app.flags.DEFINE_integer("match_count_for_evaluation", 20, "number of matches used for evaluation scores")
 	
 	tf.app.flags.DEFINE_string("rogueinabox_path", "./Rogue", "where to find the package") # to remove
 	# For training

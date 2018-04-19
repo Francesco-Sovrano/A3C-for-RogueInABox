@@ -52,7 +52,7 @@ class BaseAgent(ABC):
 			# we need to stop the agent from acting
 			# or it will try to write to a closed pipe
 			self.ui.cancel_timer(self._pending_action_timer)
-			self.rb.reset()
+			self.game_over()
 			self._pending_action_timer = self.ui.on_timer_end(self._timer_value, self._act_callback)
 
 	def game_over(self):
@@ -63,7 +63,7 @@ class BaseAgent(ABC):
 	def _act_callback(self):
 		terminal = self.act()
 		self.ui.draw_from_rogue()
-		if not self.rb.game_over(self.rb.get_screen()):
+		if not (self.rb.game_over(self.rb.get_screen()) or terminal):
 			# renew the callback
 			self._pending_action_timer = self.ui.on_timer_end(self._timer_value, self._act_callback)
 		else:

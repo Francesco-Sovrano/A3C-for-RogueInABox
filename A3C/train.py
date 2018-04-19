@@ -146,11 +146,11 @@ class Application(object):
 		checkpoint = tf.train.get_checkpoint_state(flags.checkpoint_dir)
 		if checkpoint and checkpoint.model_checkpoint_path:
 			self.saver.restore(self.sess, checkpoint.model_checkpoint_path)
-			print("checkpoint loaded:", checkpoint.model_checkpoint_path)
+			print("checkpoint loaded:", checkpoint.model_checkpoint_path, file=sys.stderr)
 			tokens = checkpoint.model_checkpoint_path.split("-")
 			# set global step
 			self.global_t = int(tokens[1])
-			print(">>> global step set: ", self.global_t)
+			print(">>> global step set: ", self.global_t, file=sys.stderr)
 			# set wall time
 			wall_t_fname = flags.checkpoint_dir + '/' + 'wall_t.' + str(self.global_t)
 			with open(wall_t_fname, 'r') as f:
