@@ -7,6 +7,6 @@ virtualenv -p python3 .env
 . .env/bin/activate
 
 pip install --upgrade pip
-pip install tensorflow matplotlib numpy scipy scikit-image pyte vtk sklearn
+pip install tensorflow-gpu matplotlib numpy scipy scikit-image pyte vtk sklearn
 
 bash ./Rogue/build_with_no_monsters.sh
