@@ -1,4 +1,5 @@
 
+import os
 import numpy as np
 
 from train import Application
@@ -12,6 +13,10 @@ from environment.environment import Environment
 
 class A3C_Agent(BaseAgent):
     def __init__(self, configs):
+        checkpoint = tf.train.get_checkpoint_state(flags.checkpoint_dir)
+        if not checkpoint or not checkpoint.model_checkpoint_path:
+            raise FileNotFoundError("a checkpoint is required, but none was found")
+        os.makedirs(flags.log_dir, exist_ok=True)
         app = Application()
         app.sess = tf.Session()
         app.device = '/cpu:0'

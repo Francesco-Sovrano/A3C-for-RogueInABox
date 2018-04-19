@@ -157,7 +157,7 @@ class Application(object):
 				self.wall_t = float(f.read())
 				self.next_save_steps = (self.global_t + flags.save_interval_step) // flags.save_interval_step * flags.save_interval_step
 		else:
-			print("Could not find old checkpoint")
+			print("Could not find old checkpoint", file=sys.stderr)
 			# set wall time
 			self.wall_t = 0.0
 			self.next_save_steps = flags.save_interval_step
