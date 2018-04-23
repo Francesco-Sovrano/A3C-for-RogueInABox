@@ -6,6 +6,7 @@ This software is a fork of:
 * [Miyosuda's UNREAL implementation](https://github.com/miyosuda/unreal)
 
 This project has been tested on Debian 9. The setup.sh script installs the necessary dependencies and compiles [Rogue](http://www.anthive.com/project/rogue/). Before running setup.sh you must have installed virtualenv, python3-dev, python3-pip and make. 
+For more details, please read our [wiki](https://github.com/Francesco-Sovrano/Partitioned-A3C-for-RogueInABox/wiki).
 
 The train.sh script starts the training.
 
