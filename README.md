@@ -29,7 +29,7 @@ The framework is composed of the following classes:
 Training Video (click to play)
 -------
 
-[![Youtube video of the training](https://img.youtube.com/vi/1j6_165Q46w/0.jpg)](https://www.youtube.com/watch?v=1j6_165Q46w)
+[![Youtube video of the training](https://img.youtube.com/vi/lQc8m8kf5GE/0.jpg)](https://youtu.be/lQc8m8kf5GE)
 
 
 License
