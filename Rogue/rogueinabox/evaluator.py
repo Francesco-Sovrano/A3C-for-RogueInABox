@@ -60,8 +60,9 @@ class RogueEvaluator:
 					result["avg_success_steps"] += e.step
 				result["avg_reward"] += e.reward
 				result["avg_tiles"] += e.info.get_known_tiles_count()
-			result["avg_success_steps"] /= result["success_rate"] # do it BEFORE averaging the success_rate
-			result["success_rate"] /= count # do it AFTER averaging the success_steps
+			if result["success_rate"] > 0:
+				result["avg_success_steps"] /= result["success_rate"] # do it BEFORE averaging the success_rate
+				result["success_rate"] /= count # do it AFTER averaging the success_steps
 			result["avg_reward"] /= count
 			result["avg_tiles"] /= count
 		return result
