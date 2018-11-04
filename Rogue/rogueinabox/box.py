@@ -232,6 +232,7 @@ class RogueBox:
 			if max_iter <= 0:
 				raise ValueError('Possible deadlock')
 		
+		win = False
 		lose=self.game_over(new_screen)
 		if not lose:
 			self.frame_info.append(self.parser.parse_screen(new_screen))
